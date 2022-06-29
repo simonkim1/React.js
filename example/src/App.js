@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Hello from './component/Hello'
+import Wrapper from './component/Wrapper';
 
 function App() {
   const name = "react";
@@ -24,7 +25,13 @@ function App() {
       <Hello 
         // 열리는 태그 내부에서는 이렇게 주석을 작성 할 수 있다.
       />
-      <Hello name="react" />
+      <Hello name="react" color="red" />
+      <Hello color="pink" />
+
+      <Wrapper>
+        <Hello name="react" color="red"></Hello>
+        <Hello color="pink" />
+      </Wrapper>
     </>
   );
 }
