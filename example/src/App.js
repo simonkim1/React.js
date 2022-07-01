@@ -1,39 +1,93 @@
 import React from 'react';
 import './App.css';
-import Hello from './component/Hello'
-import Wrapper from './component/Wrapper';
+
+function Hi(props) {
+  return (
+    <h1>Hello, {props.name}</h1>
+  );
+};
+
+function formatDate(date) {
+  return date.toLocaleDateString();
+};
+
+const comment = {
+  date: new Date(),
+  text: 'I hope you enjoy learning React!',
+  author: {
+    name: 'Hello Kitty',
+    avatarUrl: 'http://placekitten.com/g/64/64'
+  }
+};
+
+function Avatar(props) {
+  return (
+    <img
+      src={props.user.avatarUrl}
+      alt={props.user.name} />
+  );
+};
+
+function UserInfo(props) {
+  return (
+    <div>
+      <Avatar user={props.user} />
+      <div>
+        {props.user.name}
+      </div>
+    </div>
+  );
+};
+
+// function Comment(props) {
+//   return (
+//     <div>
+//       <div>
+//         <img
+//           src={props.author.avatarUrl}
+//           alt={props.author.name}
+//         />
+//         <div>
+//           {props.author.name}
+//         </div>
+//       </div>
+//       <div>
+//         {props.text}
+//       </div>
+//       <div>
+//         {formatDate(props.date)}
+//       </div>
+//     </div>
+//   );
+// };
+
+function Comment(props) {
+  return (
+    <div>
+      <UserInfo user={props.author} />
+      <div>
+        {props.text}
+      </div>
+      <div>
+        {formatDate(props.date)}
+      </div>
+    </div>
+  );
+};
 
 function App() {
-  const name = "react";
-  const style = {
-    backgroundColor: "black",
-    color: "aqua",
-    fontSize: 24,
-    padding: "1rm"
-  }
-
   return (
     <>
-      <div style={style}>{name}</div>
-      <Hello />
-      <Hello />
-      <Hello />
-      <br />
-      <input />
-      <div className='gray-box'></div>
-      { /*중괄호로 감싸야 보이지 않는다. */}
-      <Hello 
-        // 열리는 태그 내부에서는 이렇게 주석을 작성 할 수 있다.
-      />
-      <Hello name="react" color="red" />
-      <Hello color="pink" />
-
-      <Wrapper>
-        <Hello name="react" color="red"></Hello>
-        <Hello color="pink" />
-      </Wrapper>
+      <Hi name="Kim" />
+      <Hi name="Lee" />
+      <Hi name="Choi" />
+      <Comment 
+        date={comment.date}
+        text={comment.text}
+        author={comment.author} />
     </>
   );
-}
+};
+
 
 export default App;
