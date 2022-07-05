@@ -23,6 +23,9 @@ function App() {
         <Hello />
         <Hello name='JavaScript'/>
         <Hello name='react' color='red' />
+        <Hello isSpecial={true} />
+        <Hello isSpecial={false} />
+        <Hello isSpecial />
       </Wrapper>
     </>
   );
