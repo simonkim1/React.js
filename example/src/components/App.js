@@ -1,8 +1,9 @@
 import React from 'react';
 // import Hello from './Hello'
 // import Wrapper from './Wrapper';
-import Counter from './Counter';
+// import Counter from './Counter';
 import './App.css'
+import InputSample from './InputSample';
 
 function App() {
   // const name = "react";
@@ -29,7 +30,9 @@ function App() {
         <Hello isSpecial />
       </Wrapper> */}
 
-      <Counter />
+      {/* <Counter /> */}
+
+      <InputSample />
     </>
   );
 };
