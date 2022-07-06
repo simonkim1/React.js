@@ -5,11 +5,12 @@ function InputSample() {
         Name: '',
         Nickname: ''
     });
+    
     const nameInput = useRef();
-
+    
     const {Name, Nickname} = inputs;
-
-    const onChange = e=> {
+    
+    const onChange = (e) => {
         const { value, name } = e.target;
         setInputs({
             ...inputs,
@@ -22,9 +23,10 @@ function InputSample() {
             Name: '',
             Nickname: ''
         });
+        
         nameInput.current.focus();
     };
-
+    
     return (
         <div>
             <input
