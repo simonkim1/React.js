@@ -1,9 +1,10 @@
 import React from 'react';
+import './App.css'
 // import Hello from './Hello'
 // import Wrapper from './Wrapper';
 // import Counter from './Counter';
-import './App.css'
-import InputSample from './InputSample';
+// import InputSample from './InputSample';
+import InputSample2 from './InputSample2';
 
 function App() {
   // const name = "react";
@@ -32,7 +33,9 @@ function App() {
 
       {/* <Counter /> */}
 
-      <InputSample />
+      {/* <InputSample /> */}
+
+      <InputSample2 />
     </>
   );
 };
