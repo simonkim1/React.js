@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './App.css'
 // import Hello from './Hello'
 // import Wrapper from './Wrapper';
@@ -6,7 +6,8 @@ import './App.css'
 // import InputSample from './InputSample';
 // import InputSample2 from './InputSample2';
 // import InputSample3 from './InputSample3';
-import UserList from './UserList';
+// import UserList from './UserList';
+import UserList2 from './UserList2';
 
 function App() {
   // const name = "react";
@@ -14,7 +15,30 @@ function App() {
   //     backgroundColor: "black",
   //     color: "white"
   // }
-
+    const USERS1 = [
+        {
+            id: 1,
+            userName: "Kim",
+            email: "Kim@gmail.com"
+        },
+        {
+            id: 2,
+            userName: "Lee",
+            email: "Lee@naver.com"
+        },
+        {
+            id: 3,
+            userName: "Choi",
+            email: "Choi@daum.net"
+        }
+    ];
+    const nextId = useRef(4);
+    const onCreate = () => {
+      // 나중에 구현 할 배열에 항목 추가하는 로직
+      // ...
+      
+      nextId.current += 1;
+    }
   return (
     <>
       {/*<Hello />
@@ -41,7 +65,9 @@ function App() {
 
       {/* <InputSample3 /> */}
 
-      <UserList />
+      {/* <UserList /> */}
+
+      <UserList2 users={USERS1} />
     </>
   );
 };
