@@ -1,17 +1,16 @@
-import React  from "react";
+import React from 'react';
 
-function Hello({ name, color, isSpecial }) {
+function Hello({ color, name, isSpecial}) {
     return (
-        <div style={{ color: color}}>
-            {  isSpecial ? <b>*</b> : null }
-            {  isSpecial && <b>*</b> }
-            Hello! {name}
+        <div style={{ color }}>
+            { isSpecial && <b>*</b> }
+            Hello, {name}
         </div>
     );
 }
 
 Hello.defaultProps = {
-    name: "doesn't exist"
+    name: 'Bye!'
 }
 
 export default Hello;
