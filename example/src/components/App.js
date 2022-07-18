@@ -2,7 +2,8 @@ import React from 'react';
 // import Hello from './Hello';
 // import Wrapper from './Wrapper';
 // import Counter from './Counter';
-import InputSample from './InputSample';
+// import InputSample from './InputSample';
+import InputSample2 from './InputSample2';
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
 
       {/* <Counter /> */}
 
-      <InputSample />
+      {/* <InputSample /> */}
+
+      <InputSample2 />
     </>
   );
 };
