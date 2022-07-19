@@ -9,7 +9,8 @@ import React, { useRef, useState } from 'react';
 // import UserList2 from './UserList2';
 // import UserList3 from './UserList3';
 // import UserList3 from './UserList3';
-import UserList4 from './UserList4';
+// import UserList4 from './UserList4';
+import UserList5 from './UserList5';
 import CreateUser from './CreateUser';
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
   ]);
 
   const nextId = useRef(4);
+
   const onCreate = () => {
     const user = {
       id: nextId.current,
@@ -63,6 +65,13 @@ function App() {
 
     nextId.current += 1;
   }
+
+  const onRemove = id => {
+    // user.id가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만든다.
+    // = user.id 가 id 인 것을 제거함
+    setUsers(users.filter(user => user.id !== id));
+  };
+
   return (
     <>
       {/* <Wrapper>
@@ -84,14 +93,22 @@ function App() {
 
       {/* <UserList3 /> */}
 
-      <CreateUser
+      {/* <CreateUser
         username={username}
         email={email}
         onChange={onChange}
         onCreate={onCreate}
       />
 
-      <UserList4 users={users}/>
+      <UserList4 users={users}/> */}
+
+      <CreateUser
+        username={username}
+        email={email}
+        onChange={onChange}
+        onCreate={onCreate}
+      />
+      <UserList5 users={users} onRemove={onRemove} />
     </>
   );
 };
